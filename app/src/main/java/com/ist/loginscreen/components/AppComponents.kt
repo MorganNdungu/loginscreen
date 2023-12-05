@@ -2,9 +2,19 @@
 
 package com.ist.loginscreen.components
 
+import androidx.compose.foundation.Image
+import androidx.compose.foundation.background
+import androidx.compose.foundation.horizontalScroll
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.R
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.heightIn
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.text.KeyboardActions
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.OutlinedTextField
@@ -23,10 +33,12 @@ import androidx.compose.runtime.mutableStateOf
 import androidx.compose.runtime.remember
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.platform.LocalFocusManager
 import androidx.compose.ui.res.colorResource
+import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontStyle
@@ -36,6 +48,7 @@ import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.PasswordVisualTransformation
 import androidx.compose.ui.text.input.VisualTransformation
 import androidx.compose.ui.text.style.TextAlign
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.ist.loginscreen.ui.theme.BgColor
@@ -159,4 +172,40 @@ fun ButtonComponent(value: String){
         Text(text = value)
     }
 }
+@Composable
+fun GithubComponent(value: String){
+    Button(onClick = { /*TODO*/ }) {
+        Text(text = value)
+    }
+}
+@Composable
+fun GitlabComponent(value: String){
+    Button(onClick = { /*TODO*/ }) {
+        Row (horizontalArrangement = Arrangement.Center){
+            Gitlab()
+            Text(text = value)
+        }
+    }
+}
+@Composable
+fun Gitlab(){
+
+    Column (modifier = Modifier.padding(16.dp)){
+
+        Image(
+            painter = painterResource(id = com.ist.loginscreen.R.drawable.gitlab),
+            contentDescription = "alt",
+            modifier= Modifier.width(30.dp).height(30.dp)
+
+        )
+    }
+}
+//@Composable
+//fun MyImg(value: String){
+//    Button(onClick = { /*TODO*/ }) {
+//        Text(text = value)
+//    }
+//}
+
+
 
